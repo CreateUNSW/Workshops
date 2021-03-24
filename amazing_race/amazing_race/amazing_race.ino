@@ -32,7 +32,8 @@ void loop() {
   delayMicroseconds(10);
   digitalWrite(TRIG, LOW);
   buffer.push(pulseIn(ECHO, HIGH));
-    
+
+  duration = 0;
   for (int i = 0; i < buffer.size(); i++) {
     if (buffer[i] > 3000 || buffer[i] < 0) {
        duration += 50000;
